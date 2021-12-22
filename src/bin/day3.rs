@@ -1,4 +1,4 @@
-use aoc_2021::*;
+use aoc_runner::*;
 
 fn part_1(input: &str) -> u32 {
     let (one_counts, len, line_count) = count_ones(b_lines(input));
@@ -85,7 +85,7 @@ fn least_common(line_count: u32, half: u32, ones: u32) -> u8 {
 
 
 fn main() {
-    aoc_2021::day!(3, part_1, part_2);
+    day!(3, part_1, part_2);
 }
 
 

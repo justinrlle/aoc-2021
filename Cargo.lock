@@ -6,6 +6,14 @@ version = 3
 name = "aoc-2021"
 version = "0.1.0"
 dependencies = [
+ "aoc-runner",
+]
+
+[[package]]
+name = "aoc-runner"
+version = "0.1.0"
+source = "git+https://github.com/justinrlle/aoc-runner#19d56e1551131f9d9c33da0f31248126fff9e486"
+dependencies = [
  "itertools",
 ]
 

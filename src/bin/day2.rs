@@ -1,3 +1,5 @@
+use aoc_runner::*;
+
 use std::str::FromStr;
 use crate::MoveInst::{Down, Forward, Up};
 
@@ -27,7 +29,7 @@ impl FromStr for MoveInst {
 
 
 fn part_1(input: &str) -> u32 {
-    let (pos, depth) = aoc_2021::parse_all::<MoveInst>(input)
+    let (pos, depth) = parse_all::<MoveInst>(input)
         .fold((0, 0), |(pos, depth), inst| {
             match inst {
                 Down(units) => (pos, depth + units),
@@ -40,7 +42,7 @@ fn part_1(input: &str) -> u32 {
 
 
 fn part_2(input: &str) -> u32 {
-    let (pos, depth, _aim) = aoc_2021::parse_all::<MoveInst>(input)
+    let (pos, depth, _aim) = parse_all::<MoveInst>(input)
         .fold((0, 0, 0), |(pos, depth, aim), inst| {
             match inst {
                 Down(units) => (pos, depth, aim + units),
@@ -53,7 +55,7 @@ fn part_2(input: &str) -> u32 {
 
 
 fn main() {
-    aoc_2021::day!(2, part_1, part_2)
+    day!(2, part_1, part_2)
 }
 
 #[test]
