@@ -1,5 +1,17 @@
+use std::borrow::Cow;
 use std::fmt::Display;
 use std::str::FromStr;
+
+pub use itertools::Itertools;
+
+pub fn b_lines(input: &str) -> impl Iterator<Item = &[u8]> {
+    input.lines()
+        .map(str::as_bytes)
+}
+
+pub fn as_lossy_vec<'a>(iter: impl Iterator<Item = &'a [u8]>) -> Vec<Cow<'a, str>> {
+    iter.map( String::from_utf8_lossy).collect::<Vec<_>>()
+}
 
 pub fn day_input(day: u8) -> String {
     let path = format!("./days/{}", day);
